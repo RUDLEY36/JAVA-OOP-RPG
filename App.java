@@ -71,14 +71,14 @@ public class App {
                 System.out.printf("Do you want to continue with %s or do you gonna exit\n", enemyname);
                 continueornot = scan.nextLine().replace("i", "ı").toUpperCase();
 
-                if (continueornot.equals("CONTİNUE") && enemyname.equals("Dragon")) {
+                if (continueornot.equals("CONTINUE") && enemyname.equals("Dragon")) {
                     enemy = new Dragon("Dragon", 150, 18);
                     System.out.println("Your health and special attack are restarted");
                     user.health = userhealthholder;
                     specialcounter = 0;
                 }
 
-                else if (continueornot.equals("CONTİNUE")) {
+                else if (continueornot.equals("CONTINUE")) {
                     System.out.println("Your health and special attack are restarted");
                     specialcounter = 0;
                     user.health = userhealthholder;
