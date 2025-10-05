@@ -77,7 +77,7 @@ public class App {
                 continueornot = scan.nextLine().replace("i", "ı").toUpperCase();
 
                 if (continueornot.equals("CONTINUE") && enemyname.equals("Dragon")) {
-                    enemy = new Dragon("Dragon", 150, 0); // 18 yap
+                    enemy = new Dragon("Dragon", 150, 18); 
                     System.out.println("Your health and special attack are restarted");
                     user.health = userhealthholder;
                     specialcounter = 0;
