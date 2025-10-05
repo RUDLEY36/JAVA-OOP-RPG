@@ -1,9 +1,11 @@
+
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
 
         Scanner scan = new Scanner(System.in);
+
         String Username;
         int choice = 0;
         int characterchoicecounter = 0;
@@ -33,6 +35,7 @@ public class App {
         Enemies enemy = new Goblin("Goblin", 60, 8);
 
         while (user.isAlive(user)) {
+
             int move = 0;
             System.out.println("A " + enemy.name + " approached you");
             System.out.println("Please select your move\n1-Attack\n2-Defend\n3-Special Attack");
@@ -55,7 +58,8 @@ public class App {
                         enemy.health -= user.specialAttack(user.attackpower);
                         break;
                     } else {
-                        System.out.println("You already used your special attack 2 times you will pass free this round");
+                        System.out
+                                .println("You already used your special attack 2 times you will pass free this round");
                     }
             }
 
@@ -67,12 +71,13 @@ public class App {
             System.out.println();
 
             if (enemy.health <= 0) {
+
                 System.out.println("Congratulations you beat " + enemy.name);
                 System.out.printf("Do you want to continue with %s or do you gonna exit\n", enemyname);
                 continueornot = scan.nextLine().replace("i", "ı").toUpperCase();
 
                 if (continueornot.equals("CONTINUE") && enemyname.equals("Dragon")) {
-                    enemy = new Dragon("Dragon", 150, 18);
+                    enemy = new Dragon("Dragon", 150, 0); // 18 yap
                     System.out.println("Your health and special attack are restarted");
                     user.health = userhealthholder;
                     specialcounter = 0;
@@ -86,21 +91,18 @@ public class App {
                     enemyname = "Dragon";
                 }
 
-                else if (continueornot.equals("EXİT")) {
+                else if (continueornot.equals("EXIT")) {
                     System.out.println("Have a nice day");
                     break;
                 }
-            }
-
-            if (enemyname.equals("Dragon") && enemy.health <= 0) {
-                System.out.println("Congratulations you beat the game you are the hero of ARC village");
-                break;
             }
 
         }
 
         if (user.health <= 0) {
             System.out.println("You lost what kind of a hero are you ?");
+        } else {
+            System.out.println("Congratulations you beat the game you are the hero of ARC village");
         }
 
         scan.close();
